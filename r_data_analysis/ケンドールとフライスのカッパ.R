@@ -1,0 +1,10 @@
+install.packages("irr",dep=TRUE)
+library(irr)
+df <- read.csv("r-csv/通訳品質5（フライスのカッパ）.csv",header=T,fileEncoding="CP932")
+df <- na.omit(df)
+df
+kappam.fleiss(df)
+kendall(df,correct = FALSE)
+kripp.alpha(d,method=c("ordinal"))
+icc(df,model="twoway",type="agreement")
+icc(df,model="twoway",type="consistency",unit="single")
